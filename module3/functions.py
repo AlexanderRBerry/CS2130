@@ -1,4 +1,4 @@
-def is_one_to_one(domain, target, range):
+def is_one_to_one(domain, target, myRange):
     """
     Checks if a function has the one-to-one property.
 
@@ -10,9 +10,14 @@ def is_one_to_one(domain, target, range):
                   same index that forms an ordered pair.
     :return: True if the function has the one-to-one property, False otherwise.
     """
+    for r in range(len(myRange)):
+        if myRange.count(myRange[r]) > 1:
+            return False
+    else:
+        return True
 
 
-def is_onto(domain, target, range):
+def is_onto(domain, target, myRange):
     """
     Checks if a function has the onto property.
 
