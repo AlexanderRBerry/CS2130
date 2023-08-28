@@ -17,10 +17,7 @@ def intersection_of_sets(set1, set2):
             if set1[i] == set2[j]:
                 intersectionSet.append(set1[i])
                 break
-    nonDupeIntersectionSet = []  # This will hold the intersection of set1 and set2 with duplicates removed
-    for i in range(len(intersectionSet)):
-        if intersectionSet[i] not in nonDupeIntersectionSet:
-            nonDupeIntersectionSet.append(intersectionSet[i])
+    nonDupeIntersectionSet = remove_duplicates(intersectionSet)  # Removal of any duplicate entries
     return nonDupeIntersectionSet
 
 
@@ -34,3 +31,10 @@ def union_of_sets(set1, set2):
              The list is sorted from smallest to largest.
     """
 
+
+def remove_duplicates(set1):
+    nonDupeSet = []
+    for i in range(len(set1)):
+        if set1[i] not in nonDupeSet:
+            nonDupeSet.append(set1[i])
+    return nonDupeSet
