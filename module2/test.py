@@ -90,6 +90,7 @@ class NqueensTest(unittest.TestCase):
         q.queens = [0, 2, 4, 1, 3, 5]
         self.assertTrue(q.is_valid(5))
 
+
 class FibTest(unittest.TestCase):
 
     def test_recurseFib(self):
