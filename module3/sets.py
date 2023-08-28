@@ -29,9 +29,20 @@ def union_of_sets(set1, set2):
     :return: An ordered list of integers that represents the union of the two sets.
              The list is sorted from smallest to largest.
     """
+    if set1 == set2:  # Nothing needs to be done if the sets are equal
+        return set1
+    unionSet = set1 + set2
+    unionSet.sort()
+    return remove_duplicates(unionSet)
 
 
 def remove_duplicates(set1):
+    """
+    Returns a set with all duplicates removed.
+
+    :param set1: A list of integers that defines a set.
+    :return: A list of integers with all duplicate values removed.
+    """
     nonDupeSet = []
     for i in range(len(set1)):
         if set1[i] not in nonDupeSet:

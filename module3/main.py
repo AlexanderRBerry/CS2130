@@ -12,7 +12,9 @@ def main():
     C = [1, 2, 4, 5, 6, 7, 8, 7, 7, 7, 7]
 
     D = sets.intersection_of_sets(A, C)
+    E = sets.union_of_sets(A, B)
     print(D)
+    print(E)
     # print("Lists that represent sets A, B, and C")
     #
     # print("\nSet Operations")
