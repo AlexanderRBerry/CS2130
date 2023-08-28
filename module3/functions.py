@@ -29,6 +29,10 @@ def is_onto(domain, target, myRange):
                   same index that forms an ordered pair.
     :return: True if the function has the onto property, False otherwise.
     """
+    for t in target:
+        if t not in myRange:
+            return False
+    return True
 
 
 def is_bijection(domain, target, range):
@@ -43,4 +47,4 @@ def is_bijection(domain, target, range):
                   same index that forms an ordered pair.
     :return: True if the function is a bijection, False otherwise.
     """
-
+    return is_onto(domain, target, range) and is_one_to_one(domain, target, range)
