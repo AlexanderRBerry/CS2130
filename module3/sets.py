@@ -10,7 +10,6 @@ def intersection_of_sets(set1, set2):
     if set1 == set2:  # Nothing needs to be done if the sets are equal
         return set1
     set1.sort()
-    set1.sort()
     intersectionSet = []  # This will hold the intersection of set1 and set2 with duplicates
     for i in range(len(set1)):
         for j in range(len(set2)):
