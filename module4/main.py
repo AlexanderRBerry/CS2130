@@ -20,7 +20,7 @@ def main():
     print(len(myMatrix.matrix[0]))
     print(myMatrix)
     print()
-    print(MatrixRelation.reflexive_closure(myMatrix))
+    print(MatrixRelation.symmetric_closure(myMatrix))
     return
 
 if __name__ == '__main__':

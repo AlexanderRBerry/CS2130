@@ -61,8 +61,9 @@ class MatrixRelation:
             and a join could be useful here.
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        # TODO: Put code here...
-        return MatrixRelation(result)
+        transposedMatrix = MatrixRelation.transpose(self)
+        result = MatrixRelation.join(self, transposedMatrix)
+        return result
 
     def in_degree(self, vertex):
         """ Number of arrows INTO node of digraph
