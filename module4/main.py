@@ -20,7 +20,7 @@ def main():
     print(len(myMatrix.matrix[0]))
     print(myMatrix)
     print()
-    print(MatrixRelation.symmetric_closure(myMatrix))
+    print(MatrixRelation.out_degree(myMatrix, 3))
     return
 
 if __name__ == '__main__':

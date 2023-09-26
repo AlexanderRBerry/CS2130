@@ -69,15 +69,21 @@ class MatrixRelation:
         """ Number of arrows INTO node of digraph
             Nodes are numbered 0,1,2,...,SIZE-1
         """
-        # TODO: Put code here...
-        return 0
+        degree = 0
+        for row in self.matrix:
+            if row[vertex] == 1:
+                degree += 1
+        return degree
 
     def out_degree(self, vertex):
         """ Number of arrows FROM node of digraph
             Nodes are numbered 0,1,2,...,SIZE-1
         """
-        # TODO: Put code here...
-        return 0
+        degree = 0
+        for column in self.matrix[vertex]:
+            if column == 1:
+                degree += 1
+        return degree
 
     def is_rooted_tree(self):
         """ Determine if this binary relation could represent a directed rooted tree
