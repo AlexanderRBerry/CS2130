@@ -10,17 +10,20 @@ def main():
     # is a rooted tree or not
 
     myMatrix = MatrixRelation([
-        [1, 1, 1, 0],
-        [1, 0, 1, 0],
-        [0, 0, 0, 0],
-        [0, 1, 0, 1]
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 1],
+        [1, 1, 0, 1, 0, 0],
     ])
-
-    print(len(myMatrix.matrix))
-    print(len(myMatrix.matrix[0]))
+    print("myMatrix")
     print(myMatrix)
     print()
-    print(MatrixRelation.out_degree(myMatrix, 3))
+    print("Reflexive closure of myMatrix \n{}\n".format(MatrixRelation.reflexive_closure(myMatrix)))
+    print("Symmetric closure of myMatrix \n{}\n".format(MatrixRelation.symmetric_closure(myMatrix)))
+    print("This graph could be represented as a rooted tree: {}".format(MatrixRelation.is_rooted_tree(myMatrix)))
+
     return
 
 if __name__ == '__main__':

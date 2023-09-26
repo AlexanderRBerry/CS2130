@@ -11,11 +11,6 @@ class MatrixRelation:
         result = '\n'.join(map(str, self.matrix))
         return result
 
-    """
-        ***********************************************************************
-        * TODO:  Add your code to the methods below
-        ***********************************************************************
-    """
     def join(self, other):
         """ Join two matrices together by performing a
             logical OR of current matrix with matrix other
@@ -48,7 +43,7 @@ class MatrixRelation:
             Add the necessary arrows to make the matrix reflexive
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        result = self
+        result = MatrixRelation([row[:] for row in self.matrix])
         for row in range(len(self.matrix)):
             if result.matrix[row][row] != 1:
                 result.matrix[row][row] = 1
@@ -98,5 +93,4 @@ class MatrixRelation:
                 zeroInDegree += 1
             if zeroInDegree > 1:
                 return False
-
         return True
