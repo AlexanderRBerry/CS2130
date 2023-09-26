@@ -89,5 +89,14 @@ class MatrixRelation:
         """ Determine if this binary relation could represent a directed rooted tree
             This means that there is exactly 1 node with in-degree of zero
             and every other node has an in-degree of 1."""
-        # TODO: Put code here...
-        return False
+        zeroInDegree = 0
+        for row in range(len(self.matrix)):
+            inDegree = MatrixRelation.in_degree(self, row)
+            if inDegree > 1:
+                return False
+            if inDegree == 0:
+                zeroInDegree += 1
+            if zeroInDegree > 1:
+                return False
+
+        return True
