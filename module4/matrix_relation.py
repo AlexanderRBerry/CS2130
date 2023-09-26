@@ -21,7 +21,7 @@ class MatrixRelation:
             logical OR of current matrix with matrix other
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        joinedMatrix = ([])
+        joinedMatrix = []
         for row in range(len(self.matrix)):
             joinedMatrix.insert(len(joinedMatrix), [])
             for column in range(len(self.matrix[row])):
@@ -36,7 +36,11 @@ class MatrixRelation:
             Switch the rows to columns and the columns to rows
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        # TODO: Put code here...
+        result = []
+        for row in range(len(self.matrix[0])):
+            result.insert(len(result), [])
+            for column in range(len(self.matrix)):
+                result[row].insert(column, self.matrix[column][row])
         return MatrixRelation(result)
 
     def reflexive_closure(self):

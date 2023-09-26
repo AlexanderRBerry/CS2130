@@ -17,8 +17,8 @@ def main():
 
     print(len(myMatrix.matrix))
     print(len(myMatrix.matrix[0]))
-    print(MatrixRelation.join(myMatrix, myMatrix))
     print(myMatrix)
+    print(MatrixRelation.transpose(myMatrix))
     return
 
 if __name__ == '__main__':
