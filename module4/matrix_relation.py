@@ -21,8 +21,15 @@ class MatrixRelation:
             logical OR of current matrix with matrix other
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        # TODO: Put code here...
-        return MatrixRelation([])
+        joinedMatrix = ([])
+        for row in range(len(self.matrix)):
+            joinedMatrix.insert(len(joinedMatrix), [])
+            for column in range(len(self.matrix[row])):
+                if self.matrix[row][column] or other.matrix[row][column] == 1:
+                    joinedMatrix[row].insert(column, 1)
+                else:
+                    joinedMatrix[row].insert(column, 0)
+        return MatrixRelation(joinedMatrix)
 
     def transpose(self):
         """ Transpose of current matrix

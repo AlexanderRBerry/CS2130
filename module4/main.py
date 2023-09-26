@@ -8,6 +8,17 @@ def main():
     # Print the symmetric closure of the relation
     # Print a statement indicating if the relation
     # is a rooted tree or not
+
+    myMatrix = MatrixRelation([
+        [1, 1, 1, 0],
+        [1, 0, 1, 0],
+        [0, 0, 0, 0]
+    ])
+
+    print(len(myMatrix.matrix))
+    print(len(myMatrix.matrix[0]))
+    print(MatrixRelation.join(myMatrix, myMatrix))
+    print(myMatrix)
     return
 
 if __name__ == '__main__':
