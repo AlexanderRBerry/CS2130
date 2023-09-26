@@ -48,8 +48,11 @@ class MatrixRelation:
             Add the necessary arrows to make the matrix reflexive
             Don't modify this matrix "in-place" (i.e. make a copy)
         """
-        # TODO: Put code here...
-        return MatrixRelation(result)
+        result = self
+        for row in range(len(self.matrix)):
+            if result.matrix[row][row] != 1:
+                result.matrix[row][row] = 1
+        return result
 
     def symmetric_closure(self):
         """ Symmetric closure of current matrix

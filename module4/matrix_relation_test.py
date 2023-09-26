@@ -106,6 +106,9 @@ class Matrix_Relation_Test(unittest.TestCase):
         result = self.m2.transpose()
         self.assertTrue(self.m2 == self.m2)
         result = self.m3.transpose()
+
+
+
         self.assertTrue(result == MatrixRelation([[1, 0, 0, 0, 0],
                                                   [1, 1, 0, 0, 0],
                                                   [1, 1, 1, 0, 0],

@@ -12,13 +12,15 @@ def main():
     myMatrix = MatrixRelation([
         [1, 1, 1, 0],
         [1, 0, 1, 0],
-        [0, 0, 0, 0]
+        [0, 0, 0, 0],
+        [0, 1, 0, 1]
     ])
 
     print(len(myMatrix.matrix))
     print(len(myMatrix.matrix[0]))
     print(myMatrix)
-    print(MatrixRelation.transpose(myMatrix))
+    print()
+    print(MatrixRelation.reflexive_closure(myMatrix))
     return
 
 if __name__ == '__main__':
