@@ -9,6 +9,10 @@ def geometric_sequence(n, start, ratio):
     :return: A list containing the first n terms of the geometric
     sequence, rounded to two decimal places.
     """
+    geoSequence = [start]
+    for i in range(1, n):
+        geoSequence.append((geoSequence[i - 1] * ratio))
+    return [round(x, 2) for x in geoSequence]
 
 
 def arithmetic_sequence(n, start, difference):
@@ -21,7 +25,10 @@ def arithmetic_sequence(n, start, difference):
 
     :return: A list containing the computed terms of the arithmetic sequence, rounded to two decimal places.
     """
-
+    arSequence = [start]
+    for i in range(1, n):
+        arSequence.append(arSequence[i - 1] + difference)
+    return[round(x, 2) for x in arSequence]
 
 def div_mod(dividend, divisor):
     """

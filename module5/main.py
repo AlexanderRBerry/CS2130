@@ -5,11 +5,11 @@ def main():
     # Part 1, run geometric sequence
     print("\nGeometric Sequences")
     print("\n7 terms starting with 5.63 and a common ratio of 3.2")
-
+    print(geometric_sequence(7, 5.63, 3.2))
     print("\n9 terms starting with 3.78 and a common ratio of 7.124")
-
+    print(geometric_sequence(9, 3.78, 7.124))
     print("\n6 terms starting with 8 and a common ratio of 3")
-
+    print(geometric_sequence(6, 8, 3))
     # Part 1, run arithmetic sequence
     print("\nArithmetic Sequences")
     print("\n7 terms starting with 5.63 and a common difference of 3.2")
