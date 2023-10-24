@@ -41,7 +41,17 @@ def div_mod(dividend, divisor):
     :return: A tuple containing the quotient (whole number portion of
     integer division) and the remainder.
     """
-
+    q = 0
+    r = dividend
+    if dividend >= 0:
+        while r >= divisor:
+            q = q + 1
+            r = r - divisor
+    else:
+        while r < 0:
+            q = q - 1
+            r = r + divisor
+    return q, r
 
 def gcd(x, y):
     """
@@ -53,7 +63,18 @@ def gcd(x, y):
 
     :return: The greatest common divisor of the two integers.
     """
+    if y == x:
+        tempVal = x
+        x = y
+        y = tempVal
+    r = y % x
 
+    while r != 0:
+        y = x
+        x = r
+        r = y % x
+
+    return x
 
 def lcm(x, y):
     """
@@ -64,4 +85,4 @@ def lcm(x, y):
 
     :return: The least common multiple of the two integers.
     """
-
+    return (x * y)/ gcd(x, y)
