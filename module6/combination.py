@@ -27,6 +27,10 @@ class Combination:
         #TODO: Make sure you start at the beginning (see the
         # reset_combination method)
         #TODO: Print combination
+        while True:
+            print(self.current_combination)
+            if self.next_combination() is True:
+                break
         #TODO: Generate a next Combination
         #TODO: Repeat (It helps if your next_combination method returns a boolean)
         pass
@@ -34,6 +38,15 @@ class Combination:
     def next_combination(self):
         #TODO: Move from right to left in both the
         # currentCombination and the combinationSet
+        sizeDiff = len(self.combination_set) - self.subset_length
+        for i in range(len(self.current_combination) - 1, -1, -1):
+            if self.current_combination[i] != self.combination_set[i + sizeDiff]:
+                index = self.combination_set.index(self.current_combination[i]) + 1
+                self.current_combination[i:] = self.combination_set[index:(self.subset_length - i + index)]
+                return False
+        self.reset_combination()
+        return True
+
         # until the numbers do not match. (Hint, use negative indexing)
         #TODO: Find startPos as 1 plus the position of the
         # number from the current combination that did

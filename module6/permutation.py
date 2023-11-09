@@ -23,9 +23,9 @@ class Permutation:
         #TODO: Make sure you start at the beginning (see the
         # reset_permutation method)
         #TODO: Print permutation
-        print(self.current_permutation)
         #TODO: Generate a next permutation
         while True:
+            print(self.current_permutation)
             if self.next_permutation() is True:
                 break
         #TODO: Repeat (It helps if your next_permutation method returns a boolean)
@@ -45,7 +45,7 @@ class Permutation:
                         self.current_permutation[j] = nextVal
                         break
                 self.current_permutation[i:] = sorted(self.current_permutation[i:])
-                print(self.current_permutation)
+
                 return False
 
 

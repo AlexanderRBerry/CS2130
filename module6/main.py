@@ -11,6 +11,9 @@ def main():
     #TODO: Use the permutation class to print all permutations of the set.
     myPerm = Permutation((2, 1, 3))
     myPerm.print_all_permutations()
+
+    myCombo = Combination((0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 5)
+    myCombo.print_all_combinations()
     pass
 
 
