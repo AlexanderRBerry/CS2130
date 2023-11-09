@@ -3,17 +3,34 @@ from combination import Combination
 
 
 def main():
-    #TODO: Prompt user to input a set of positive integers (-1 to stop)
-    #myList = list(input("Please enter a list of numbers -1 to stop"))
-    #TODO: Prompt user to enter a target sum
-    #TODO: Prompt user to enter the subset length
-    #TODO: Use the combination class to find all subsets of length n that sum to x
-    #TODO: Use the permutation class to print all permutations of the set.
-    myPerm = Permutation((2, 1, 3))
-    myPerm.print_all_permutations()
+    # Prompt user to input a set of positive integers (-1 to stop)
+    userNums = []
+    while True:
+        userInput = int(input("Enter a positive integer (-1 to stop): "))
+        if userInput >= 0:
+            userNums.append(userInput)
+        else:
+            break
 
-    myCombo = Combination((0, 1, 2, 3, 4, 5, 6, 7, 8, 9), 5)
-    myCombo.print_all_combinations()
+    # Prompt user to enter a target sum
+    targetSum = int(input("Enter the target sum: "))
+    # Prompt user to enter the subset length
+    subsetLen = int(input("Enter the subset length: "))
+    print("Subsets of length {} that sum to {}".format(subsetLen, targetSum))
+    # Use the combination class to find all subsets of length n that sum to x
+    userCombo = Combination(userNums, subsetLen)
+    while True:
+        total = 0
+        for i in range(userCombo.subset_length):
+            total += userCombo.current_combination[i]
+        if total == targetSum:
+            print(userCombo.current_combination)
+        if userCombo.next_combination() is True:
+            break
+    # Use the permutation class to print all permutations of the set.
+    print("Permutations:")
+    userPerm = Permutation(userNums)
+    userPerm.print_all_permutations()
     pass
 
 

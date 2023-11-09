@@ -20,47 +20,37 @@ class Permutation:
         self.current_permutation = list(perm)
 
     def print_all_permutations(self):
-        #TODO: Make sure you start at the beginning (see the
-        # reset_permutation method)
-        #TODO: Print permutation
-        #TODO: Generate a next permutation
+        self.reset_permutation()
+
+
         while True:
+            # Print permutations
             print(self.current_permutation)
+            # Generate a next permutation
             if self.next_permutation() is True:
                 break
-        #TODO: Repeat (It helps if your next_permutation method returns a boolean)
         pass
 
     def next_permutation(self):
-
+        # Move from right to left until the current number is less than the previous one
         for i in range(len(self.current_permutation) - 1, -1, -1):
+            # Don't go out of bounds, this means you are at the end
             if i - 1 < 0:
                 self.reset_permutation()
                 return True
             nextVal = self.current_permutation[i - 1]
             if self.current_permutation[i] > nextVal:
                 for j in range(len(self.current_permutation) - 1, -1, -1):
+                    # Start at the right and find the first
+                    # number greater than current.
                     if self.current_permutation[j] > self.current_permutation[i - 1]:
+                        # Swap the numbers
                         self.current_permutation[i - 1] = self.current_permutation[j]
                         self.current_permutation[j] = nextVal
                         break
+                # Reverse the order of the numbers to the right of the swapped
+                # value so that they are in increasing order.
                 self.current_permutation[i:] = sorted(self.current_permutation[i:])
 
                 return False
-
-
-
-
-
-        #TODO: Move from right to left until the
-        # current number is less than the previous one
-        #TODO: Start at the right and find the first
-        # number greater than current.
-        #TODO: Swap the numbers
-        #TODO: Reverse the order of the numbers to the right of the swapped
-        # value so that they are in increasing order.
-        #TODO: When you go through the entire set and the current
-        # number is never less than the previous one, reset
-        # the permutation to the beginning (see reset_permutation)
-        # It is helpful to return a boolean indicating if the permutation has been reset.
         pass
